@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/ball.png</file>
+        <file>images/ballnew.png</file>
+        <file>images/bg.png</file>
+        <file>images/bg12.jpg</file>
+        <file>images/icon.png</file>
+        <file>images/KU_logo.png</file>
+        <file>images/lifejacket.png</file>
+        <file>images/lifejacket12.png</file>
+        <file>images/lifejacketnew.png</file>
+        <file>images/lock.png</file>
+        <file>images/question.png</file>
+        <file>images/show.png</file>
+        <file>images/swimming.png</file>
+        <file>images/tube.png</file>
+        <file>images/tubenew.png</file>
+        <file>images/user_green.png</file>
+    </qresource>
+</RCC>

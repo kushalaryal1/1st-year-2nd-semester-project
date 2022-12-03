@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>admin</class>
+ <widget class="QDialog" name="admin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1420</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1</y>
+     <width>401</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#frame{
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(0, 92, 151), stop:1 rgb(54, 55, 149));
+	border-radius: 0;
+}
+
+#transaction_ID, #date_input, #name_input, #address_input, #phone_input, #amount1_input, #amount2_input, #amount3_input, #remarks_input{
+	border-radius: 0;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border: 1px solid #fff;
+	padding:5px;
+	background-color: #fff;
+	font-size: 17px;
+	color: #374957;
+}
+
+#transaction_ID:focus, #date_input:focus, #name_input:focus, #address_input:focus, #phone_input:focus, #amount1_input:focus, #amount2_input:focus, #amount3_input:focus, #remarks_input:focus{
+	background-color: #E3E8F0;
+}
+
+#select_buyer_btn, #select_seller_btn{
+	color: #fff;
+	font-size: 17px;
+}
+
+#save_button, #calculate_net_amount_btn{
+	border-radius: 8px;
+	font-weight: bold;
+	background-color: #32D736;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#calculate_net_amount_btn{
+	border-top-left-radius: none;
+	border-bottom-left-radius: none;
+}
+
+#save_button:hover, #calculate_net_amount_btn:hover {
+	background-color: #34E038;
+}
+
+#update_button{
+	border: 2px solid  #88B2CC;
+	border-radius: 8px;
+	background-color: #88B2CC;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#update_button:hover{
+	background-color: #96c4e0;
+	border-color: #96c4e0;
+}
+
+#delete_button{
+	border: 2px solid #f77062;
+	border-radius: 8px;
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 17px;
+	color: #f77062;
+	padding: 8px;
+}
+
+#delete_button:hover{
+	background-color: #f77062;
+	color: #fff;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="welcome">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:33px;
+font-weight:bold;
+color:gold;
+nackground-color:transparent;</string>
+    </property>
+    <property name="text">
+     <string>Welcome,</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:33px;
+font-weight:bold;
+color:gold;
+nackground-color:transparent;</string>
+    </property>
+    <property name="text">
+     <string>KUPOOL</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/images/images/icon.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>272</x>
+      <y>30</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/images/images/KU_logo.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>450</y>
+      <width>281</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font-size: 25px;
+border: 0px;
+color:#fff;</string>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:25px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Developed By:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Kushal Aryal&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Ankit Nepal&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Amit Poudyal&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Dikshant Bikram Thapa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>0</y>
+     <width>1031</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>841</width>
+      <height>501</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swimming">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>290</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#swimming{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#swimming:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>Swimming Ticket</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lifejacket">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>290</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lifejacket{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#lifejacket:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>Life Jacket</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swimtube">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>290</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#swimtube{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#swimtube:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>Swimming Tube</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ballpush">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>290</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#ballpush{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#ballpush:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>Ball</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>121</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/images/images/swimming.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>312</x>
+      <y>150</y>
+      <width>141</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/images/images/tubenew.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>160</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/images/images/ballnew.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>692</x>
+      <y>170</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/images/images/lifejacketnew.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addmore">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>460</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#addmore{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#addmore:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add More</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="userbtn">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>20</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#userbtn{
+border:2px solid #88B2CC;
+border-radius:8px;
+background-color: #88B2CC;
+font-weight: bold;
+font-size: 17px;
+color: #fff;
+padding: 8px;
+}
+#userbtn:hover{
+background-color:#96c4e0;
+border-color:#96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>User Information</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="signout_btn">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>20</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to logout from the system.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#signout_btn{
+color:#ff562c;
+font-size:20px;
+border: 5px solid #ff562c;
+border-radius:10px;
+}
+#signout_btn:hover{
+color:#fff;
+background-color:#ff562c;
+}</string>
+    </property>
+    <property name="text">
+     <string>  Log out</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Alt+L</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>600</y>
+     <width>1031</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
